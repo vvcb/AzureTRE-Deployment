@@ -4,9 +4,9 @@ name: Deploy Azure TRE
 # It also runs on a schedule, serving as the nightly build
 
 on:  # yamllint disable-line rule:truthy
-  schedule:
-    # 1am each night https://crontab.guru/#0_1_*_*_*
-    - cron: "0 1 * * *"
+#   schedule:
+#     # 1am each night https://crontab.guru/#0_1_*_*_*
+#     - cron: "0 1 * * *"
   push:
     branches: [main]
   workflow_dispatch:
@@ -14,7 +14,7 @@ on:  # yamllint disable-line rule:truthy
       environment:
         description: The environment to run this workflow in
         type: environment
-        default: Dev
+        default: CICD
         required: true
 
 # This will prevent multiple runs of this entire workflow.
